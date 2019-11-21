@@ -109,7 +109,7 @@ public class MenuController implements Initializable {
     
     private Image img;
     
-    private ImageView view;
+    private ImageView view = new ImageView();
 
     @FXML
     void abrirFiguras(ActionEvent event) {
@@ -227,6 +227,7 @@ public class MenuController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
+        menu = new ContextMenu();
         vbox.getStyleClass().add("Vbox");
         rotaciona = new MenuItem("Rotaciona 90 graus");
         rotaciona.setOnAction(new EventHandler<ActionEvent>(){
@@ -299,15 +300,15 @@ public class MenuController implements Initializable {
         desfocar = new Menu("Desfocar");
         desfocar.getItems().addAll(blur,gaussian,motion);
         menu.getItems().addAll(rotaciona, rotacionaNegativo, iluminar, desfocar, refletir);
-        view.setOnContextMenuRequested(e -> menu.show(view, e.getScreenX(), e.getScreenY())  );
-//        view.addEventHandler(MouseEvent.MOUSE_CLICKED, new EventHandler<MouseEvent>() {
-//            @Override
-//            public void handle(MouseEvent event) {
-//                if(event.getButton() == MouseButton.SECONDARY) {
-//                    menu.show(view, event.getScreenX(), event.getScreenY());
-//                }
-//            }
-//        });
+ //       view.setOnContextMenuRequested(e -> menu.show(view, e.getScreenX(), e.getScreenY())  );
+      view.addEventHandler(MouseEvent.MOUSE_CLICKED, new EventHandler<MouseEvent>() {
+         @Override
+         public void handle(MouseEvent event) {
+           if(event.getButton() == MouseButton.SECONDARY) {
+               menu.show(view, event.getScreenX(), event.getScreenY());
+           }
+      }
+    });
         
     }
 

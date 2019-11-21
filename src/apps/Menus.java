@@ -23,14 +23,15 @@ public class Menus extends Application {
     @Override
     public void start(Stage primaryStage) throws IOException {
         FXMLLoader loader = new FXMLLoader();
-        String fxmlDocPath = "D:/Documentos/NetBeansProjects/TEC2019-2/src/apps/Menu.fxml";
-        FileInputStream fxmlStream = new FileInputStream(fxmlDocPath);
-        
-        Parent root = loader.load(fxmlStream);
-        
+//        String fxmlDocPath = "C:/Users/Jhonatan/Documents/tec2019/src/apps/Menu.fxml";
+//        
+//        FileInputStream fxmlStream = new FileInputStream(fxmlDocPath);
+//        
+//        Parent root = loader.load(fxmlStream);
+        Parent root = FXMLLoader.load(getClass().getResource("Menu.fxml"));
         Scene scene = new Scene(root);
 
-        File f = new File("D:/Documentos/NetBeansProjects/TEC2019-2/src/apps/menu.css");
+        File f = new File("C:/Users/Jhonatan/Documents/tec2019/src/apps/menu.css");
         scene.getStylesheets().clear();
         scene.getStylesheets().add("file:///" + f.getAbsolutePath().replace("\\", "/"));
         primaryStage.setTitle("Menu Mídias");
