@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane id="AnchorPane" prefHeight="500.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pizzaorder.CadastroSaboresController">
+   <children>
+      <BorderPane prefHeight="500.0" prefWidth="600.0">
+         <center>
+            <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+               <children>
+                  <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0">
+                     <children>
+                        <Label id="nomeSabor" fx:id="nomeSabor" text="Nome do Sabor:">
+                           <HBox.margin>
+                              <Insets right="20.0" />
+                           </HBox.margin>
+                        </Label>
+                        <TextField fx:id="tNomeSabor" />
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="100.0" prefWidth="200.0">
+                     <children>
+                        <Label id="itemSabor" fx:id="itemSabor" alignment="TOP_LEFT" text="Itens do Sabor:">
+                           <HBox.margin>
+                              <Insets right="25.0" />
+                           </HBox.margin>
+                        </Label>
+                        <TextArea fx:id="taItens" prefHeight="81.0" prefWidth="341.0">
+                           <HBox.margin>
+                              <Insets bottom="10.0" />
+                           </HBox.margin>
+                        </TextArea>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT" prefHeight="110.0" prefWidth="500.0">
+                     <children>
+                        <Label fx:id="precoSabor" text="Preço do Sabor:">
+                           <HBox.margin>
+                              <Insets right="20.0" />
+                           </HBox.margin>
+                        </Label>
+                        <TextField fx:id="tPrecoSabor" />
+                     </children>
+                  </HBox>
+               </children>
+               <padding>
+                  <Insets bottom="50.0" left="80.0" right="50.0" top="50.0" />
+               </padding>
+               <BorderPane.margin>
+                  <Insets />
+               </BorderPane.margin>
+            </VBox>
+         </center>
+         <bottom>
+            <HBox prefHeight="147.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Button fx:id="bConfirma" mnemonicParsing="false" onAction="#confirma" prefHeight="100.0" prefWidth="150.0" text="Confirma">
+                     <HBox.margin>
+                        <Insets bottom="40.0" left="40.0" right="40.0" top="40.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button fx:id="bCancelar" mnemonicParsing="false" onAction="#cancela" prefHeight="100.0" prefWidth="150.0" text="Cancelar">
+                     <HBox.margin>
+                        <Insets bottom="40.0" right="40.0" top="40.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button fx:id="bSair" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#sair" prefHeight="100.0" prefWidth="150.0" text="Sair">
+                     <HBox.margin>
+                        <Insets bottom="40.0" left="100.0" right="40.0" top="40.0" />
+                     </HBox.margin>
+                  </Button>
+               </children>
+            </HBox>
+         </bottom>
+      </BorderPane>
+   </children>
+</AnchorPane>

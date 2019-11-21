@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane fx:id="borderPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="apps.MenuController">
+   <left>
+      <VBox fx:id="vbox" prefHeight="394.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+         <children>
+            <Hyperlink id="linkUTFPR" fx:id="linkUTFPR" onAction="#abrirUTF" text="UTFPR" />
+            <Hyperlink id="linkMoodle" fx:id="linkMoodle" onAction="#abrirMoodle" text="Moodle" />
+            <Hyperlink id="linkFiguras" fx:id="linkFiguras" onAction="#abrirFiguras" text="Figuras" />
+            <Hyperlink id="linkSons" fx:id="linkSons" onAction="#abrirSom" text="Sons" />
+            <Hyperlink id="linkVideo" fx:id="linkVideo" onAction="#abrirVideo" text="Video" />
+         </children>
+      </VBox>
+   </left>
+   <bottom>
+      <HBox id="hbox" fx:id="hbox" alignment="CENTER" prefHeight="70.0" prefWidth="600.0" spacing="20.0" visible="false" BorderPane.alignment="CENTER">
+         <children>
+            <Button id="btnIniciar" fx:id="btnIniciar" mnemonicParsing="false" onAction="#inicia" text="Reiniciar" />
+            <ToggleButton id="btnPausar" fx:id="btnPausar" mnemonicParsing="false" onAction="#pausa" text="Pausar" />
+            <Button id="btnParar" fx:id="btnParar" mnemonicParsing="false" onAction="#para" text="Parar" />
+         </children>
+      </HBox>
+   </bottom>
+</BorderPane>

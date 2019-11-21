@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.effect.Reflection?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" styleClass="mainFxmlClass" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/11.0.1" fx:controller="apps.ExemploFXMLController">
+    <stylesheets>
+        <URL value="@apps.css" />
+    </stylesheets>
+   <children>
+      <Label fx:id="lSistemas" layoutX="26.0" layoutY="25.0" text="Sistemas Acessados:" textFill="#1800ff">
+         <font>
+            <Font name="Candara Bold" size="18.0" />
+         </font>
+      </Label>
+      <CheckBox id="cbMoodle" fx:id="cbMoodle" allowIndeterminate="true" layoutX="26.0" layoutY="67.0" mnemonicParsing="false" text="Moodle" />
+      <CheckBox id="cbAcademico" fx:id="cbAcademico" allowIndeterminate="true" layoutX="26.0" layoutY="110.0" mnemonicParsing="false" text="Acadêmico" />
+      <Label layoutX="346.0" layoutY="25.0" text="Nível de Acesso" textFill="#1700ff">
+         <font>
+            <Font name="Candara Bold" size="18.0" />
+         </font>
+      </Label>
+      <VBox layoutX="346.0" layoutY="60.0" prefHeight="98.0" prefWidth="120.0" spacing="10.0">
+         <children>
+            <RadioButton id="rbAdmin" fx:id="rbAdmin" mnemonicParsing="false" text="Administrador">
+               <toggleGroup>
+                  <ToggleGroup fx:id="gbAcesso" />
+               </toggleGroup>
+            </RadioButton>
+            <RadioButton id="rbPadrao" fx:id="rbPadrao" mnemonicParsing="false" text="Padrão" toggleGroup="$gbAcesso" />
+            <RadioButton id="rbVisitante" fx:id="rbVisitante" mnemonicParsing="false" text="Visitante" toggleGroup="$gbAcesso" />
+         </children>
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </padding>
+      </VBox>
+      <ToggleButton id="bSalvar" fx:id="bSalvar" layoutX="26.0" layoutY="200.0" maxWidth="100.0" minWidth="100.0" mnemonicParsing="false" prefWidth="100.0" text="Salvar" AnchorPane.bottomAnchor="175.0" AnchorPane.leftAnchor="26.0" AnchorPane.rightAnchor="526.0" AnchorPane.topAnchor="200.0">
+         <effect>
+            <Reflection />
+         </effect>
+         <toggleGroup>
+            <ToggleGroup fx:id="gbBotoes" />
+         </toggleGroup>
+      </ToggleButton>
+      <ToggleButton id="bCancelar" fx:id="bCancelar" layoutX="153.0" layoutY="200.0" mnemonicParsing="false" text="Cancelar" toggleGroup="$gbBotoes">
+         <effect>
+            <Reflection />
+         </effect>
+      </ToggleButton>
+      <Slider id="slTamanho" fx:id="slTamanho" blockIncrement="1.0" layoutX="28.0" layoutY="310.0" majorTickUnit="2.0" max="3.0" min="1.0" minorTickCount="1" showTickMarks="true" snapToTicks="true" value="2.0" />
+      <Label layoutX="26.0" layoutY="272.0" text="Tamanho da Fonte" textFill="#0011ff">
+         <font>
+            <Font name="Candara Bold" size="18.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
